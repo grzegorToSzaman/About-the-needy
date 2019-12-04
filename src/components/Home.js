@@ -1,54 +1,12 @@
 import React, {Component} from 'react';
-import NavLink from "react-router-dom";
-import Link from "react-scroll";
-
-class Header extends Component {
-    render() {
-        return <h1>Header</h1>
-    }
-}
-
-class ThreeColumns extends Component {
-    render() {
-        return <h1>3columns</h1>
-    }
-}
-
-class FourSteps extends Component {
-    render() {
-        return <h1>FourSteps</h1>
-    }
-}
-
-class GiveThings extends Component {
-    render() {
-        return <h1>GiveThings</h1>
-    }
-}
-
-class AboutUs extends Component {
-    render() {
-        return <h1>About us</h1>
-    }
-}
-
-class Helping extends Component {
-    render() {
-        return <h1>Helping</h1>
-    }
-}
-
-class Contact extends Component {
-    render() {
-        return <h1>contact</h1>
-    }
-}
-
-class Footer extends Component {
-    render() {
-        return <h1>footer</h1>
-    }
-}
+import Header from "./HomeComponents/Header";
+import ThreeColumns from "./HomeComponents/ThreeColumns";
+import FourSteps from "./HomeComponents/FourSteps";
+import GiveThings from "./HomeComponents/GiveThings";
+import AboutUs from "./HomeComponents/AboutUs";
+import Helping from "./HomeComponents/Helping";
+import Contact from "./HomeComponents/Contact";
+import Footer from "./HomeComponents/Footer";
 
 class Home extends Component {
     render() {
