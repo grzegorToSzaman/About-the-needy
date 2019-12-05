@@ -1,7 +1,10 @@
+
+//HEADER
+
 header {
   height: 100vh;
   background-image: url("/assets/Home-Hero-Image.jpg");
-  background-position: -100% 0;
+  background-position: -25vw;
   background-repeat: no-repeat;
   background-size: contain;
 
@@ -102,6 +105,9 @@ header {
     }
   }
 }
+
+//HEADER MEDIA
+
 @media screen and (max-width: 800px) {
   header {
     background-image: none;
@@ -127,6 +133,9 @@ header {
     }
   }
 }
+
+//THREE COLUMNS
+
 section.threeColumns {
   background-image: url("/assets/3 Columns Background.png");
   .container {
@@ -156,6 +165,9 @@ section.threeColumns {
     }
   }
 }
+
+//THREE COLUMNS MEDIA
+
 @media screen and (max-width: 650px) {
   section.threeColumns {
     .container {
@@ -171,5 +183,57 @@ section.threeColumns {
 only screen and (min-resolution: 2dppx) {
   .example {
     background-image: url('/assets/3 Columns Background@2x.png');
+  }
+}
+
+//FOUR STEPS
+
+section.four--steps {
+  width: 100%;
+  .container {
+    max-width: 1350px;
+    margin: 0 auto;
+    h1 {
+      text-align: center;
+    }
+    .decoration {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+    .steps {
+      margin-top: 2rem;
+      padding: 2rem 0;
+      background-color: $color1;
+      display: flex;
+      justify-content: space-evenly;
+      .step {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .line {
+          height: 1px;
+          width: 50px;
+          background-color: indianred;
+        }
+        h5 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+//FOUR STEPS MEDIA
+
+@media screen and (max-width: 650px) {
+  section.four--steps {
+    .container {
+      .steps {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }

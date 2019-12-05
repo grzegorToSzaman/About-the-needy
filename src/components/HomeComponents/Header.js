@@ -20,7 +20,7 @@ class Header extends Component {
                         <div>
                             <ul>
                                 <li>Start</li>
-                                <li>O co chodzi?</li>
+                                <li><Link to='four--steps' spy={true} smooth={true} duration={1000}>O co chodzi?</Link></li>
                                 <li>O nas</li>
                                 <li>Fundacja i organizacje</li>
                                 <li><Link to='test' spy={true} smooth={true} duration={1000}>Kontakt</Link></li>
