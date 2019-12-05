@@ -16,6 +16,7 @@ class Header extends Component {
                             <NavLink to='login'><span>Zaloguj</span></NavLink>
                             <NavLink to='register'><span>Załóż konto</span></NavLink>
                         </div>
+                        <div className='hamburger'>X</div>
                         <div>
                             <ul>
                                 <li>Start</li>

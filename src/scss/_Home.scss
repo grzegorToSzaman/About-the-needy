@@ -10,7 +10,7 @@ header {
     margin: 0 auto;
 
     .navigation__buttons {
-      height: 20vh;
+      height: 15vh;
       width: 100%;
       position: relative;
 
@@ -55,10 +55,17 @@ header {
           }
         }
       }
+      .hamburger {
+        display: none;
+        position: absolute;
+        right: 0;
+        margin-top: 3rem;
+        margin-right: 3rem;
+      }
     }
     .header__intro {
       min-width: 390px;
-      margin-top: 2rem;
+      margin-top: 4rem;
       margin-right: 7rem;
       float: right;
       display: flex;
@@ -90,6 +97,30 @@ header {
             text-decoration: none;
             color: $font-color;
           }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  header {
+    .container {
+      .navigation__buttons {
+        div:last-child {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+        }
+      }
+
+      .header__intro {
+        min-width: 250px;
+
+        .buttons {
+          flex-direction: column;
+          align-items: center;
         }
       }
     }
