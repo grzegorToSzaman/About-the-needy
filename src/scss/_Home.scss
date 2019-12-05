@@ -104,6 +104,7 @@ header {
 }
 @media screen and (max-width: 800px) {
   header {
+    background-image: none;
     .container {
       .navigation__buttons {
         div:last-child {
@@ -124,5 +125,51 @@ header {
         }
       }
     }
+  }
+}
+section.threeColumns {
+  background-image: url("/assets/3 Columns Background.png");
+  .container {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    .box {
+      text-align: center;
+      width: 20%;
+      min-width: 130px;
+      h1 {
+        font-size: 300%;
+        color: $color2;
+        font-weight: lighter;
+      }
+      h3 {
+        text-transform: uppercase;
+        letter-spacing: -0.36px;
+        font-weight: normal;
+        text-align: center;
+      }
+      p {
+        letter-spacing: -0.32px;
+        font-family: $font-alt;
+      }
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  section.threeColumns {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      .box {
+        width: 70%;
+      }
+    }
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx) {
+  .example {
+    background-image: url('/assets/3 Columns Background@2x.png');
   }
 }
