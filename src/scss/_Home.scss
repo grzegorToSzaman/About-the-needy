@@ -143,6 +143,7 @@ section.threeColumns {
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 20px;
     .box {
       text-align: center;
       width: 20%;
@@ -252,6 +253,60 @@ section.four--steps {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+      }
+    }
+  }
+}
+
+//ABOUT US
+
+section.about-us {
+  .container {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: flex;
+    height: 100vh;
+    .text {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $color1;
+      h1 {
+        font-weight: normal;
+        letter-spacing: -0.76px;
+      }
+      p {
+        width: 60%;
+        text-align: center;
+        letter-spacing: -0.6px;
+        line-height: 2rem;
+      }
+      img:last-child {
+        float: right;
+      }
+    }
+    .foto {
+
+      width: 50%;
+      background-image: url("/assets/People.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  section.about-us {
+    .container {
+      flex-direction: column;
+      .text {
+        width: 100%;
+      }
+      .foto {
+        height: 50%;
+        width: 100%;
       }
     }
   }
