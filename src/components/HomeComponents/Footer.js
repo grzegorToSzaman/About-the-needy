@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
+import {Link, Element} from 'react-scroll'
 
 class Footer extends Component {
     render() {
-        return <h1>footer</h1>
+        return(
+            <Element name='test'>
+                <h1>footer</h1>
+            </Element>
+        )
     }
 }
 

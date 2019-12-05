@@ -1,7 +1,97 @@
 header {
   height: 100vh;
-  background-image: url("../assets/Home-Hero-Image.jpg");
+  background-image: url("/assets/Home-Hero-Image.jpg");
   background-position: -100% 0;
   background-repeat: no-repeat;
   background-size: contain;
+
+  .container {
+    max-width: 1352px;
+    margin: 0 auto;
+
+    .navigation__buttons {
+      height: 20vh;
+      width: 100%;
+      position: relative;
+
+      div:first-child {
+        margin-top: 1rem;
+        position: absolute;
+        right: 0;
+
+        span {
+          display: inline-table;
+          font-size: 13px;
+          color: $color4;
+          margin-right: 2rem;
+          padding: 5px;
+
+          &:hover {
+            border: 0.75px solid $color3;
+            cursor: pointer;
+          }
+        }
+      }
+
+      div:last-child {
+        margin-top: 2rem;
+        position: absolute;
+        right: 0;
+
+        ul {
+          list-style: none;
+
+          li {
+            font-size: 18px;
+            display: inline-table;
+            cursor: pointer;
+            margin-right: 2rem;
+            padding: 5px;
+
+            &:hover {
+
+              border: 0.75px solid $font-color;
+            }
+          }
+        }
+      }
+    }
+    .header__intro {
+      min-width: 390px;
+      margin-top: 2rem;
+      margin-right: 7rem;
+      float: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+      p {
+        margin: 5px 0;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      img {
+        margin: 1rem 0;
+      }
+      .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        div {
+          padding: 5px 0;
+          text-align: center;
+          font-size: 2rem;
+          font-weight: lighter;
+          width: 45%;
+          border: 0.75px solid $font-color;
+          min-width: 192px;
+          a {
+            text-decoration: none;
+            color: $font-color;
+          }
+        }
+      }
+    }
+  }
 }
