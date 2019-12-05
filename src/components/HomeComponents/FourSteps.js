@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {NavLink} from "react-router-dom";
 
 class FourSteps extends Component {
     render() {
@@ -33,6 +34,14 @@ class FourSteps extends Component {
                             <h5>kurier przyjedzie w dogodnym terminie</h5>
                         </div>
                     </div>
+
+                    <div className='give-away'>
+                        <NavLink to='login'>
+                        <h1>ODDAJ</h1>
+                        <h1>RZECZY</h1>
+                        </NavLink>
+                    </div>
+
                 </div>
             </section>
         )

@@ -221,6 +221,25 @@ section.four--steps {
         }
       }
     }
+    .give-away {
+      margin: 2rem 0 2rem 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 200px;
+      border: 0.75px solid $font-color;
+      padding: 5px 0;
+      a {
+        text-decoration: none;
+        color: $font-color;
+        h1 {
+          font-size: 2rem;
+          font-weight: lighter;
+          margin: 0;
+
+        }
+      }
+
+    }
   }
 }
 
