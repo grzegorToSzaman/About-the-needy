@@ -28,6 +28,7 @@ header {
           color: $color4;
           margin-right: 2rem;
           padding: 5px;
+          border: 0.75px solid white;
 
           &:hover {
             border: 0.75px solid $color3;
@@ -50,6 +51,7 @@ header {
             cursor: pointer;
             margin-right: 2rem;
             padding: 5px;
+            border: 0.75px solid white;
 
             &:hover {
 
@@ -162,6 +164,7 @@ section.threeColumns {
       p {
         letter-spacing: -0.32px;
         font-family: $font-alt;
+        font-weight: lighter;
       }
     }
   }
@@ -196,6 +199,7 @@ section.four--steps {
     margin: 0 auto;
     h1 {
       text-align: center;
+      font-weight: normal;
     }
     .decoration {
       margin-left: 50%;
@@ -219,6 +223,7 @@ section.four--steps {
         }
         h5 {
           text-align: center;
+          font-weight: normal;
         }
       }
     }
@@ -284,7 +289,8 @@ section.about-us {
         line-height: 2rem;
       }
       img:last-child {
-        float: right;
+        align-self: flex-end;
+        margin-right: 3rem;
       }
     }
     .foto {
@@ -297,6 +303,9 @@ section.about-us {
     }
   }
 }
+
+//ABOUT US MEDIA
+
 @media screen and (max-width: 800px) {
   section.about-us {
     .container {
@@ -307,6 +316,39 @@ section.about-us {
       .foto {
         height: 50%;
         width: 100%;
+      }
+    }
+  }
+}
+
+//HELPING
+
+section.helping {
+  .container {
+    max-width: 1350px;
+    margin: 0 auto;
+    h1 {
+      font-weight: normal;
+      letter-spacing: -0.76px;
+      text-align: center;
+    }
+    img {
+      margin-left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 2rem;
+    }
+    .who-help {
+      display: flex;
+      justify-content: center;
+      div {
+        height: 4rem;
+        width: 15%;
+        border: 0.75px solid $font-color;
+        text-align: center;
+
+      }
+      div:nth-child(2) {
+        margin: 0 5rem;
       }
     }
   }
