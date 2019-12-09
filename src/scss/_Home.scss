@@ -351,5 +351,41 @@ section.helping {
         margin: 0 5rem;
       }
     }
+    .description {
+      width: 30%;
+      text-align: center;
+      margin: 5rem auto;
+    }
+    .one-position {
+      width: 80%;
+      margin: 2rem auto;
+      h1 {
+        float: left;
+        margin: 0;
+      }
+      p {
+        float: right;
+      }
+      h5 {
+        margin: 0;
+      }
+      .clear {
+        clear: both;
+      }
+    }
+    .numbers {
+      list-style: none;
+      margin-left: 50%;
+      //transform: translateX(-50%);
+      display: flex;
+      padding: 0;
+      li {
+        background-color: maroon;
+        color: white;
+        padding: 5px 10px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    }
   }
 }
