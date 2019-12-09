@@ -343,48 +343,74 @@ section.helping {
       div {
         height: 4rem;
         width: 15%;
-        border: 0.75px solid $font-color;
+        min-width: 120px;
+        border: 0.75px solid white;
         text-align: center;
-
+        cursor: pointer;
+        &:hover {
+          border: 0.75px solid $font-color;
+        }
+      }
+      .active {
+        border: 0.75px solid $font-color;
       }
       div:nth-child(2) {
         margin: 0 5rem;
+        @media screen and (max-width: 600px)  {
+          margin: 0 2rem;
+        }
       }
     }
     .description {
-      width: 30%;
+      width: 45%;
       text-align: center;
-      margin: 5rem auto;
+      margin: 3rem auto;
     }
     .one-position {
       width: 80%;
       margin: 2rem auto;
+      font-family: $font-alt;
       h1 {
         float: left;
         margin: 0;
+        font-weight: normal;
       }
       p {
         float: right;
+        font-weight: lighter;
       }
       h5 {
         margin: 0;
+        padding-bottom: 1rem;
+        font-weight: normal;
       }
       .clear {
         clear: both;
       }
     }
+    .one-position:nth-child(1),
+    .one-position:nth-child(2){
+      border-bottom: 0.75px solid $font-color;
+    }
     .numbers {
+      width: 100%;
+      margin: 0;
       list-style: none;
-      margin-left: 50%;
-      //transform: translateX(-50%);
       display: flex;
+      justify-content: center;
       padding: 0;
       li {
-        background-color: maroon;
-        color: white;
+        background-color: white;
+        border: 0.75px solid white;
         padding: 5px 10px;
         margin: 10px;
         cursor: pointer;
+        &:hover {
+          border: 0.75px solid $font-color;
+        }
+      }
+      .selected {
+        border: 0.75px solid $font-color;
       }
     }
   }

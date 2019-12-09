@@ -22,7 +22,7 @@ class Header extends Component {
                                 <li>Start</li>
                                 <li><Link to='four--steps' spy={true} smooth={true} duration={1000}>O co chodzi?</Link></li>
                                 <li><Link to='about-us' spy={true} smooth={true} duration={1000}>O nas</Link></li>
-                                <li>Fundacja i organizacje</li>
+                                <li><Link to='helping' spy={true} smooth={true} duration={1000}>Fundacja i organizacje</Link></li>
                                 <li>Kontakt</li>
                             </ul>
                         </div>

@@ -8,22 +8,44 @@ class Locals extends Component {
         currentPage: 1,
         elementsPerPage: 3
     };
+    changePage = (e, i) => {
+        this.setState({currentPage: i})
+    };
     render() {
+        const {currentPage, elementsPerPage} = this.state;
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(locals.length / elementsPerPage); i++) {
+            const element = <li
+                            key={i}
+                            onClick={e => this.changePage(e, i)}
+                            className={this.state.currentPage === i ? 'selected' : ''}>
+                                {i}
+                            </li>;
+            pageNumbers.push(element);
+        }
+        const lastOfIndex = currentPage * elementsPerPage;
+        const firstOfIndex = lastOfIndex - 3;
+        const currentElements = locals.slice(firstOfIndex, lastOfIndex);
         return (
             <div>
                 <p className='description'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
                 </p>
-                {locals.map((local, i) => {
-                    return (
-                        <div className='one-position' key={i}>
-                            <h1>{local.name}</h1>
-                            <p>{local.description}</p>
-                            <div className='clear'/>
-                            <h5>{local.items}</h5>
-                        </div>
-                    )
-                })}
+                <div className='positions'>
+                    {currentElements.map((local, i) => {
+                        return (
+                            <div className='one-position' key={i}>
+                                <h1>{local.name}</h1>
+                                <p>{local.description}</p>
+                                <div className='clear'/>
+                                <h5>{local.items.join(', ')}</h5>
+                            </div>
+                        )
+                    })}
+                </div>
+                <ul className='numbers'>
+                    {pageNumbers.length !== 1 && pageNumbers}
+                </ul>
             </div>
         )
     }
@@ -34,22 +56,44 @@ class Organizations extends Component {
         currentPage: 1,
         elementsPerPage: 3
     };
+    changePage = (e, i) => {
+        this.setState({currentPage: i})
+    };
     render() {
+        const {currentPage, elementsPerPage} = this.state;
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(organizations.length / elementsPerPage); i++) {
+            const element = <li
+                                key={i}
+                                onClick={e => this.changePage(e, i)}
+                                className={this.state.currentPage === i ? 'selected' : ''}>
+                                    {i}
+                                </li>;
+            pageNumbers.push(element);
+        }
+        const lastOfIndex = currentPage * elementsPerPage;
+        const firstOfIndex = lastOfIndex - 3;
+        const currentElements = organizations.slice(firstOfIndex, lastOfIndex);
         return (
             <div>
                 <p className='description'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
                 </p>
-                {organizations.map((organization, i) => {
-                    return (
-                        <div className='one-position' key={i}>
-                            <h1>{organization.name}</h1>
-                            <p>{organization.description}</p>
-                            <div className='clear'/>
-                            <h5>{organization.items}</h5>
-                        </div>
-                    )
-                })}
+                <div className='positions'>
+                    {currentElements.map((organization, i) => {
+                        return (
+                            <div className='one-position' key={i}>
+                                <h1>{organization.name}</h1>
+                                <p>{organization.description}</p>
+                                <div className='clear'/>
+                                <h5>{organization.items.join(', ')}</h5>
+                            </div>
+                        )
+                    })}
+                </div>
+                <ul className='numbers'>
+                    {pageNumbers.length !== 1 && pageNumbers}
+                </ul>
             </div>
         );
     }
@@ -60,7 +104,7 @@ class Foundations extends Component {
         currentPage: 1,
         elementsPerPage: 3
     };
-    handleClick = (e, i) => {
+    changePage = (e, i) => {
         this.setState({
             currentPage: i
         })
@@ -68,7 +112,12 @@ class Foundations extends Component {
     render() {
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(foundations.length / this.state.elementsPerPage); i++) {
-            const a = <li key={i} onClick={e => this.handleClick(e, i)}>{i}</li>;
+            const a = <li
+                        key={i}
+                        onClick={e => this.changePage(e, i)}
+                        className={this.state.currentPage === i ? 'selected' : ''}>
+                             {i}
+                    </li>;
             pageNumbers.push(a);
         }
         const indexOfLast = this.state.currentPage * this.state.elementsPerPage;
@@ -84,7 +133,7 @@ class Foundations extends Component {
                             return(
                                 <div className='one-position' key={i}>
                                     <h1>{foundation.name}</h1>
-                                    <p>{foundation.items}</p>
+                                    <p>{foundation.items.join(', ')}</p>
                                     <div className='clear'/>
                                     <h5>{foundation.mission}</h5>
                                 </div>
@@ -102,24 +151,53 @@ class Foundations extends Component {
 
 class Helping extends Component {
     state = {
-        fundationsWindow: true,
+        foundationsWindow: true,
         organizationsWindow: false,
-        localWindow: false,
+        localsWindow: false,
     };
-
+    showFoundations = () => {
+        this.setState({
+            foundationsWindow: true,
+            organizationsWindow: false,
+            localsWindow: false,
+        })
+    };
+    showOrganizations = () => {
+        this.setState({
+            foundationsWindow: false,
+            organizationsWindow: true,
+            localsWindow: false,
+        })
+    };
+    showLocals = () => {
+        this.setState({
+            foundationsWindow: false,
+            organizationsWindow: false,
+            localsWindow: true,
+        })
+    };
     render() {
-
+        let toRender;
+        if (this.state.foundationsWindow) {
+            toRender = <Foundations />
+        } else if (this.state.organizationsWindow) {
+            toRender = <Organizations />
+        } else {
+            toRender = <Locals />
+        }
         return(
             <section className='helping'>
                 <div className='container'>
                     <h1>Komu pomagamy?</h1>
                     <img src="/assets/Decoration.svg" alt="decoration"/>
                     <div className='who-help'>
-                        <div>Fundacjom</div>
-                        <div>Organizacjom<br/>pozarządowym</div>
-                        <div>Lokalnym<br/>zbiórkom</div>
+                        <div onClick={this.showFoundations} className={this.state.foundationsWindow ? 'active' : ''}>Fundacjom</div>
+                        <div onClick={this.showOrganizations} className={this.state.organizationsWindow ? 'active' : ''}>Organizacjom<br/>pozarządowym</div>
+                        <div onClick={this.showLocals} className={this.state.localsWindow ? 'active' : ''}>Lokalnym<br/>zbiórkom</div>
                     </div>
-                    <Foundations />
+                    <div>
+                        {toRender}
+                    </div>
                 </div>
             </section>
         )
