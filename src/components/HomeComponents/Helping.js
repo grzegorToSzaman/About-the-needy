@@ -36,9 +36,9 @@ class Locals extends Component {
                         return (
                             <div className='one-position' key={i}>
                                 <h1>{local.name}</h1>
-                                <p>{local.description}</p>
+                                <p>{local.items.join(', ')}</p>
                                 <div className='clear'/>
-                                <h5>{local.items.join(', ')}</h5>
+                                <h5>{local.description}</h5>
                             </div>
                         )
                     })}
@@ -84,9 +84,9 @@ class Organizations extends Component {
                         return (
                             <div className='one-position' key={i}>
                                 <h1>{organization.name}</h1>
-                                <p>{organization.description}</p>
+                                <p>{organization.items.join(', ')}</p>
                                 <div className='clear'/>
-                                <h5>{organization.items.join(', ')}</h5>
+                                <h5>{organization.description}</h5>
                             </div>
                         )
                     })}
@@ -191,9 +191,9 @@ class Helping extends Component {
                     <h1>Komu pomagamy?</h1>
                     <img src="/assets/Decoration.svg" alt="decoration"/>
                     <div className='who-help'>
-                        <div onClick={this.showFoundations} className={this.state.foundationsWindow ? 'active' : ''}>Fundacjom</div>
-                        <div onClick={this.showOrganizations} className={this.state.organizationsWindow ? 'active' : ''}>Organizacjom<br/>pozarządowym</div>
-                        <div onClick={this.showLocals} className={this.state.localsWindow ? 'active' : ''}>Lokalnym<br/>zbiórkom</div>
+                        <div onClick={this.showFoundations} className={this.state.foundationsWindow ? 'active' : ''}><p>Fundacjom</p></div>
+                        <div onClick={this.showOrganizations} className={this.state.organizationsWindow ? 'active' : ''}><p>Organizacjom pozarządowym</p></div>
+                        <div onClick={this.showLocals} className={this.state.localsWindow ? 'active' : ''}><p>Lokalnym zbiórkom</p></div>
                     </div>
                     <div>
                         {toRender}
