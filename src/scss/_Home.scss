@@ -529,7 +529,9 @@ section.contactForm {
         }
         input[type=submit] {
           width: auto;
-          margin-left: 80%;
+          margin-left: 100%;
+          margin-top: 10px;
+          transform: translateX(-100%);
           border: 0.75px solid $font-color;
           padding: 5px 15px;
           font-weight: lighter;
@@ -543,22 +545,5 @@ section.contactForm {
        width: 100%;
        text-align: center;
      }
-  }
-
-}
-
-@media screen and (max-width: 600px) {
-  section.contactForm {
-    .container {
-      .contact {
-
-      }
-    }
-  }
-  .name {
-    float: none;
-  }
-  .email {
-    float: none;
   }
 }

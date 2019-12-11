@@ -124,7 +124,9 @@ class Footer extends Component {
                                     onChange={this.onChange}
                                     placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
                                 />
-                                <p className={this.state.messageError ? 'visible' : 'hidden'}>Wiadomość musi mieć conajmniej 120 znaków!</p>
+                                <p className={this.state.messageError ? 'visible' : 'hidden'}>
+                                    Wiadomość musi mieć conajmniej 120 znaków!
+                                </p>
                                 <input type="submit" value='Wyślij'/>
                             </form>
                         </div>
