@@ -1,60 +1,73 @@
-.container {
-  max-width: 1350px;
-  margin: 0 auto;
-  .login {
-    width: 40%;
-    margin-top: 50px;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h1 {
-      font-weight: normal;
-      letter-spacing: -0.8px;
-    }
-    form {
-      padding: 50px;
-      background-color: $color1;
-      margin-top: 3rem;
-      width: 215px;
-      p {
-        margin: 10px 0 5px 0;
-        font-size: 0.7rem;
-        font-weight: bold;
+section.login-window {
+  .container {
+    max-width: 1350px;
+    margin: 0 auto;
+
+    .login {
+      width: 40%;
+      margin-top: 50px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-weight: normal;
+        letter-spacing: -0.8px;
       }
-      input {
-        width: 100%;
-        background: transparent;
-        border: none;
-        outline: none;
-        border-bottom: 1px solid #707070;
-        overflow: hidden;
-        &:focus {
-          border-bottom: 1px solid black;
+
+      form {
+        padding: 50px;
+        background-color: $color1;
+        margin-top: 3rem;
+        width: 215px;
+
+        p {
+          margin: 10px 0 5px 0;
+          font-size: 0.7rem;
+          font-weight: bold;
+        }
+
+        input {
+          width: 100%;
+          background: transparent;
+          border: none;
+          outline: none;
+          border-bottom: 1px solid #707070;
+          overflow: hidden;
+
+          &:focus {
+            border-bottom: 1px solid black;
+          }
         }
       }
     }
-  }
-  .buttons {
-    margin-top: 30px;
-    text-align: center;
-    span {
-      font-weight: lighter;
-      padding: 5px;
-      border: 0.75px solid white;
-      &:hover {
-        border: 0.75px solid $font-color;
-        cursor: pointer;
+
+    .buttons {
+      margin-top: 30px;
+      text-align: center;
+
+      span {
+        font-weight: lighter;
+        padding: 5px;
+        border: 0.75px solid white;
+
+        &:hover {
+          border: 0.75px solid $font-color;
+          cursor: pointer;
+        }
+
+        a {
+          text-decoration: none;
+          color: $font-color;
+        }
       }
-      a {
-        text-decoration: none;
-        color: $font-color;
+
+      span:last-child {
+        margin-left: 225px;
       }
-    }
-    span:last-child {
-      margin-left: 225px;
     }
   }
 }

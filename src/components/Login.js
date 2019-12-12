@@ -7,22 +7,25 @@ class Login extends Component {
         return (
             <>
                 <Navigation />
-                <div className='container'>
-                    <div className='login'>
-                        <h1>Zaloguj się</h1>
-                        <img src="/assets/Decoration.svg" alt="decoration"/>
-                        <form>
-                            <p>E-mail</p>
-                            <input type="text"/>
-                            <p>Hasło</p>
-                            <input type="password"/>
-                        </form>
+                <section className='login-window'>
+                    <div className='container'>
+                        <div className='login'>
+                            <h1>Zaloguj się</h1>
+                            <img src="/assets/Decoration.svg" alt="decoration"/>
+                            <form>
+                                <p>E-mail</p>
+                                <input type="text"/>
+                                <p>Hasło</p>
+                                <input type="password"/>
+                            </form>
+                        </div>
+                        <div className='buttons'>
+                            <span><NavLink to='register'>Załóż konto</NavLink></span>
+                            <span>Zaloguj się</span>
+                        </div>
                     </div>
-                    <div className='buttons'>
-                        <span><NavLink to='register'>Załóż konto</NavLink></span>
-                        <span>Zaloguj się</span>
-                    </div>
-                </div>
+                </section>
+
             </>
         )
     }
