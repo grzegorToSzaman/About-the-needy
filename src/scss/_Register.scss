@@ -23,13 +23,22 @@ section.register-window {
         background-color: $color1;
         margin-top: 3rem;
         width: 215px;
-
-        p {
+        .visible {
+          visibility: visible;
+        }
+        .hidden {
+          visibility: hidden;
+        }
+        h5 {
           margin: 10px 0 5px 0;
           font-size: 0.7rem;
           font-weight: bold;
         }
-
+        p {
+          color: red;
+          margin: 0;
+          font-size: 0.6rem;
+        }
         input {
           width: 100%;
           background: transparent;
