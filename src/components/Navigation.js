@@ -11,7 +11,7 @@ class Navigation extends Component {
                         <span><NavLink to='register'>Załóż konto</NavLink></span>
                     </div>
                     <div className='nav-buttons'>
-                        <span>Start</span>
+                        <span><NavLink to='/'>Start</NavLink></span>
                         <span>O co chodzi?</span>
                         <span>O nas</span>
                         <span>Fundacje i organizacje</span>
