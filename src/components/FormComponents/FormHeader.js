@@ -49,6 +49,10 @@ class FormHeader extends Component {
                             </div>
                         </div>
                     </div>
+                    <Link to='main-form' spy={true} smooth={true} duration={1000}>
+                        <div className="arrow arrow-first"/>
+                        <div className="arrow arrow-second"/>
+                    </Link>
                 </div>
             </header>
         )
