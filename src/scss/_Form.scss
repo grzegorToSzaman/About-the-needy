@@ -147,8 +147,25 @@ header.form--header {
       position: absolute;
       left: 50%;
       top: 93%;
-      //transform-origin: 50% 50%;
-      //transform: translate3d(-50%, -50%, 0);
+      &:before,
+      &:after {
+        background: darkred;
+        content: '';
+        display: block;
+        height: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+      }
+      &:before {
+        transform: rotate(45deg) translateX(-23%);
+        transform-origin: top left;
+      }
+      &:after {
+        transform: rotate(-45deg) translateX(23%);
+        transform-origin: top right;
+      }
     }
 
     .arrow-first {
@@ -156,28 +173,6 @@ header.form--header {
     }
     .arrow-second {
       animation: arrow-movement $ani-speed $ani-delay ease-in-out infinite;
-    }
-
-    .arrow:before,
-    .arrow:after {
-      background: darkred;
-      content: '';
-      display: block;
-      height: 3px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 30px;
-    }
-
-    .arrow:before {
-      transform: rotate(45deg) translateX(-23%);
-      transform-origin: top left;
-    }
-
-    .arrow:after {
-      transform: rotate(-45deg) translateX(23%);
-      transform-origin: top right;
     }
   }
 }
@@ -212,5 +207,46 @@ header.form--header {
 }
 
 .main-form {
-  height: 50vh;
+  .container {
+    max-width: 1352px;
+    margin: 0 auto;
+    .orange-belt {
+      height: 15vh;
+      background-color: $color3;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h3 {
+        margin: 0 0 7px 0;
+        font-weight: bold;
+        color: black;
+        font-size: 1.5rem;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    .steps {
+      height: 85vh;
+      background-color: #707070;
+      padding-left: 50px;
+      p {
+        padding-top: 20px;
+        font-weight: lighter;
+        margin: 0;
+      }
+      .step-one {
+        h3 {
+          margin-top: 40px;
+        }
+        label {
+          font-weight: lighter;
+        }
+        input {
+          margin: 0 20px 20px 0;
+        }
+      }
+    }
+  }
 }
