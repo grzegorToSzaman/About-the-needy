@@ -250,6 +250,22 @@ header.form--header {
           margin: 0 20px 20px 0;
         }
       }
+      .step-two {
+
+      }
+      .step-three {
+        span {
+          padding: 5px 10px;
+          border: 1px solid darksalmon;
+        }
+        input[type=checkbox] {
+          visibility: hidden;
+          margin-top: 30px;
+        }
+        input[type=checkbox]:checked + span {
+          background-color: darkcyan;
+        }
+      }
     }
   }
 }

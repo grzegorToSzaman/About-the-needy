@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Step1 from "./StepOne";
 import Step2 from "./StepTwo";
+import Step3 from "./StepThree";
 
 class MainForm extends Component {
     state = {
@@ -11,7 +12,8 @@ class MainForm extends Component {
         books: false,
         others: false,
         numberOfBags: 0,
-
+        localization: '',
+        whoHelp: [],
     };
     changeStep = step => {
         this.setState({step: step});
@@ -23,6 +25,13 @@ class MainForm extends Component {
         let integer = parseInt(val);
         this.setState({numberOfBags: integer});
     };
+    changeLocal = val => {
+        this.setState({localization: val})
+    };
+    changeWhoHelp = val => {
+        this.setState({whoHelp: [...this.state.whoHelp, val]})
+    };
+    deleteWhoHelp
     render() {
         const textToOrangeBelt = [
             'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.',
@@ -40,7 +49,8 @@ class MainForm extends Component {
                     <div className='steps'>
                         <p>Krok {this.state.step}/4</p>
                         {/*<Step1 method={this.changeState} checked={this.state} changeStep={this.changeStep}/>*/}
-                        <Step2 method={this.changeBags} changeStep={this.changeStep}/>
+                        {/*<Step2 method={this.changeBags} changeStep={this.changeStep}/>*/}
+                        <Step3 localization={this.changeLocal}/>
                     </div>
                 </div>
             </div>
