@@ -6,7 +6,7 @@ import Step4 from "./StepFour";
 
 class MainForm extends Component {
     state = {
-        step: 1,
+        step: 4,
         goodWear: false,
         badWear: false,
         toys: false,

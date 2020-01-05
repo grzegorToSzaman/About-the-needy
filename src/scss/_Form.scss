@@ -266,6 +266,13 @@ header.form--header {
           background-color: darkcyan;
         }
       }
+      .step-four {
+        .column {
+          display: inline-block;
+          height: 300px;
+          width: 290px;
+        }
+      }
     }
   }
 }
