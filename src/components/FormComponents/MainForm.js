@@ -1,63 +1,6 @@
 import React, {Component} from 'react';
-
-class Step1 extends Component {
-    changeState = e => {
-        this.props.method(e.target.name, e.target.checked);
-    };
-    handleClick = () => {
-        this.props.changeStep(2);
-    };
-    render() {
-        const {goodWear, badWear, toys, books, others} = this.props.checked;
-        return (
-            <div className='step-one'>
-
-                    <h3>Zaznacz co chcesz oddać:</h3>
-                    <input
-                        type="checkbox"
-                        name='goodWear'
-                        onChange={this.changeState}
-                        checked={goodWear}
-                    />
-                    <label htmlFor="goodWear">ubrania, które nadają się do ponownego użycia</label>
-                    <br/>
-                    <input
-                        type="checkbox"
-                        name='badWear'
-                        onChange={this.changeState}
-                        checked={badWear}
-                    />
-                    <label htmlFor="badWear">ubrania, do wyrzucenia</label>
-                    <br/>
-                    <input
-                        type="checkbox"
-                        name='toys'
-                        onChange={this.changeState}
-                        checked={toys}
-                    />
-                    <label htmlFor="toys">zabawki</label>
-                    <br/>
-                    <input
-                        type="checkbox"
-                        name='books'
-                        onChange={this.changeState}
-                        checked={books}
-                    />
-                    <label htmlFor="books">książki</label>
-                    <br/>
-                    <input
-                        type="checkbox"
-                        name='others'
-                        onChange={this.changeState}
-                        checked={others}
-                    />
-                    <label htmlFor="others">inne</label>
-                <br/>
-                <button onClick={this.handleClick}>Dalej</button>
-            </div>
-        )
-    }
-}
+import Step1 from "./StepOne";
+import Step2 from "./StepTwo";
 
 class MainForm extends Component {
     state = {
@@ -67,6 +10,7 @@ class MainForm extends Component {
         toys: false,
         books: false,
         others: false,
+        numberOfBags: 0,
 
     };
     changeStep = step => {
@@ -75,17 +19,28 @@ class MainForm extends Component {
     changeState = (name, value) => {
         this.setState({[name]: value});
     };
+    changeBags = val => {
+        let integer = parseInt(val);
+        this.setState({numberOfBags: integer});
+    };
     render() {
+        const textToOrangeBelt = [
+            'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.',
+            "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.",
+            "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.",
+            "Podaj adres oraz termin odbioru rzeczy."
+        ];
         return (
             <div className='main-form'>
                 <div className='container'>
                     <div className='orange-belt'>
                         <h3>Ważne!</h3>
-                        <p>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.</p>
+                        <p>{textToOrangeBelt[this.state.step - 1]}</p>
                     </div>
                     <div className='steps'>
                         <p>Krok {this.state.step}/4</p>
-                        <Step1 method={this.changeState} checked={this.state} changeStep={this.changeStep}/>
+                        {/*<Step1 method={this.changeState} checked={this.state} changeStep={this.changeStep}/>*/}
+                        <Step2 method={this.changeBags} changeStep={this.changeStep}/>
                     </div>
                 </div>
             </div>

@@ -229,7 +229,10 @@ header.form--header {
     }
     .steps {
       height: 85vh;
-      background-color: #707070;
+      background-image: url("/assets/Background-Form.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       padding-left: 50px;
       p {
         padding-top: 20px;
