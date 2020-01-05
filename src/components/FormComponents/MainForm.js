@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Step1 from "./StepOne";
 import Step2 from "./StepTwo";
 import Step3 from "./StepThree";
+import Step4 from "./StepFour";
 
 class MainForm extends Component {
     state = {
@@ -38,6 +39,41 @@ class MainForm extends Component {
             "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.",
             "Podaj adres oraz termin odbioru rzeczy."
         ];
+        let toDisplay;
+        switch (this.state.step) {
+            case 1:
+                toDisplay = <Step1
+                    method={this.changeState}
+                    checked={this.state}
+                    changeStep={this.changeStep}
+                />;
+                break;
+            case 2:
+                toDisplay = <Step2
+                    method={this.changeBags}
+                    changeStep={this.changeStep}
+                    bags={this.state.numberOfBags}
+                />;
+                break;
+            case 3:
+                toDisplay = <Step3
+                    localization={this.changeLocal}
+                    method={this.changeWhoHelp}
+                    helping={this.state.whoHelp}
+                    changeStep={this.changeStep}
+                    chosenLocal={this.state.localization}
+                />;
+                break;
+            case 4:
+                toDisplay = <Step4
+                    changeStep={this.changeStep}
+                />;
+                break;
+            default:
+                console.log('asdsa');
+        }
+
+
         return (
             <div className='main-form'>
                 <div className='container'>
@@ -47,9 +83,7 @@ class MainForm extends Component {
                     </div>
                     <div className='steps'>
                         <p>Krok {this.state.step}/4</p>
-                        {/*<Step1 method={this.changeState} checked={this.state} changeStep={this.changeStep}/>*/}
-                        {/*<Step2 method={this.changeBags} changeStep={this.changeStep}/>*/}
-                        <Step3 localization={this.changeLocal} method={this.changeWhoHelp} helping={this.state.whoHelp} changeStep={this.changeStep}/>
+                        {toDisplay}
                     </div>
                 </div>
             </div>

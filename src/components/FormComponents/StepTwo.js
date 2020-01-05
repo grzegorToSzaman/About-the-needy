@@ -16,7 +16,7 @@ class Step2 extends Component {
 
                 <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
                 <span>Liczba 60l worków:</span>
-                <select name="" id="" onChange={this.numberOfBags}>
+                <select name="" id="" onChange={this.numberOfBags} value={this.props.bags}>
                     <option value="">— wybierz —</option>
                     <option value="1">1</option>
                     <option value="2">2</option>

@@ -34,7 +34,7 @@ class Step3 extends Component {
             <div className="step-three">
                 <h3>Lokalizacja:</h3>
                 <br/>
-                <select onChange={this.changeLocalization}>
+                <select onChange={this.changeLocalization} value={this.props.chosenLocal}>
                     <option value="0">— wybierz —</option>
                     <option value="Poznań">Poznań</option>
                     <option value="Warszawa">Warszawa</option>
