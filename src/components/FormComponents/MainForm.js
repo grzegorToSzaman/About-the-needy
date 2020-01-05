@@ -29,9 +29,8 @@ class MainForm extends Component {
         this.setState({localization: val})
     };
     changeWhoHelp = val => {
-        this.setState({whoHelp: [...this.state.whoHelp, val]})
+        this.setState({whoHelp: val})
     };
-    deleteWhoHelp
     render() {
         const textToOrangeBelt = [
             'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.',
@@ -50,7 +49,7 @@ class MainForm extends Component {
                         <p>Krok {this.state.step}/4</p>
                         {/*<Step1 method={this.changeState} checked={this.state} changeStep={this.changeStep}/>*/}
                         {/*<Step2 method={this.changeBags} changeStep={this.changeStep}/>*/}
-                        <Step3 localization={this.changeLocal}/>
+                        <Step3 localization={this.changeLocal} method={this.changeWhoHelp} helping={this.state.whoHelp} changeStep={this.changeStep}/>
                     </div>
                 </div>
             </div>

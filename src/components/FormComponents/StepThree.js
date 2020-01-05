@@ -2,32 +2,39 @@ import React, {Component} from 'react'
 
 class Step3 extends Component {
     state = {
-        children: false,
-        singleMothers: false,
-        homeless: false,
-        disabled: false,
-        elders: false,
-        whoHelp: []
+        whoHelp: [...this.props.helping]
     };
     changeLocalization = e => {
         this.props.localization(e.target.value);
     };
     handleChange = e => {
         if (e.target.checked) {
-            this.setState({whoHelp: [...this.state.whoHelp, e.target.value]})
+            this.setState({whoHelp: [...this.state.whoHelp, e.target.value]}, () => {
+                this.props.method(this.state.whoHelp);
+            });
+
         } else {
             const helps = [...this.state.whoHelp];
             helps.splice(helps.indexOf(e.target.value), 1);
-            this.setState({whoHelp: helps});
+            this.setState({whoHelp: helps}, () => {
+                this.props.method(this.state.whoHelp);
+            });
         }
 
+
+    };
+    next = () => {
+        this.props.changeStep(4);
+    };
+    previous = () => {
+        this.props.changeStep(2);
     };
     render() {
         return (
             <div className="step-three">
                 <h3>Lokalizacja:</h3>
                 <br/>
-                <select name="" id="" onChange={this.changeLocalization}>
+                <select onChange={this.changeLocalization}>
                     <option value="0">— wybierz —</option>
                     <option value="Poznań">Poznań</option>
                     <option value="Warszawa">Warszawa</option>
@@ -40,37 +47,55 @@ class Step3 extends Component {
                 <h5>Komu chcesz pomóc?</h5>
                 <form onChange={this.handleChange}>
                     <label>
-                        <input type="checkbox" name='whoHelp' value='dzieciom'/>
+                        <input
+                            type="checkbox"
+                            name='whoHelp'
+                            value='dzieciom'
+                            checked={[...this.state.whoHelp].indexOf('dzieciom') !== -1}
+                        />
                         <span>dzieciom</span>
                     </label>
                     <label>
-                        <input type="checkbox" name='whoHelp' value='samotnym matkom'/>
+                        <input
+                            type="checkbox"
+                            name='whoHelp'
+                            value='samotnym matkom'
+                            checked={[...this.state.whoHelp].indexOf('samotnym matkom') !== -1}
+                        />
                         <span>samotnym matkom</span>
                     </label>
                     <label>
-                        <input type="checkbox" name='whoHelp' value='bezdomnym'/>
+                        <input
+                            type="checkbox"
+                            name='whoHelp'
+                            value='bezdomnym'
+                            checked={[...this.state.whoHelp].indexOf('bezdomnym') !== -1}
+                        />
                         <span>bezdomnym</span>
                     </label>
                     <br/>
                     <label>
-                        <input type="checkbox" name='whoHelp' value='niepełnosprawnym'/>
+                        <input
+                            type="checkbox"
+                            name='whoHelp'
+                            value='niepełnosprawnym'
+                            checked={this.state.whoHelp.indexOf('niepełnosprawnym') !== -1}
+                        />
                         <span>niepełnosprawnym</span>
                     </label>
                     <label>
-                        <input type="checkbox" name='whoHelp' value='osobom starszym'/>
+                        <input
+                            type="checkbox"
+                            name='whoHelp'
+                            value='osobom starszym'
+                            checked={this.state.whoHelp.indexOf('osobom starszym') !== -1}
+                        />
                         <span>osobom starszym</span>
                     </label>
                 </form>
 
-                {/*<span>dzieciom</span>
-                <span>samotnym matkom</span>
-                <span>bezdomnym</span>
-                <br/>
-                <span>niepełnosprawnym</span>
-                <span>osobom starszym</span>
-                <br/>
-                <button>Wstecz</button>
-                <button>Dalej</button>*/}
+                <button onClick={this.previous}>Wstecz</button>
+                <button onClick={this.next}>Dalej</button>
             </div>
 
         )
