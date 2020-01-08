@@ -8,31 +8,72 @@ class Step4 extends Component {
         return (
             <div className="step-four">
                 <h3>Podaj adres oraz termin odbioru rzecz przez kuriera</h3>
-                <div className="column">
-                    <h5>Adres odbioru:</h5>
-                    <label htmlFor="street">Ulica</label>
-                    <input type="text" id="street" name="street"/>
-                    <br/>
-                    <label htmlFor="city">Miasto</label>
-                    <input type="text" id="city" name="city"/>
-                    <br/>
-                    <label htmlFor="zipCode">Kod<br/>pocztowy</label>
-                    <input type="text" id="zipCode" name="zipCode"/>
-                    <br/>
-                    <label htmlFor="mobile">Numer<br/>telefonu</label>
-                    <input type="text" id="mobile" name="mobile"/>
+                <div className='columns'>
+                    <div className="column">
+                        <h5>Adres odbioru:</h5>
+                        <div className='row'>
+                            <div className='col-25'>
+                                <label htmlFor="street">Ulica</label>
+                            </div>
+                            <div className='col-75'>
+                                <input type="text" id="street" name="street"/>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='col-25'>
+                                <label htmlFor="city">Miasto</label>
+                            </div>
+                            <div className='col-75'>
+                                <input type="text" id="city" name="city"/>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='col-25'>
+                                <label htmlFor="zipCode">Kod<br/>pocztowy</label>
+                            </div>
+                            <div className='col-75'>
+                                <input type="text" id="zipCode" name="zipCode"/>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='col-25'>
+                                <label htmlFor="mobile">Numer<br/>telefonu</label>
+                            </div>
+                            <div className='col-75'>
+                                <input type="text" id="mobile" name="mobile"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="column">
+                        <h5>Termin odbioru:</h5>
+                        <div className='row'>
+                            <div className='col-25'>
+                                <label htmlFor="date">Data</label>
+                            </div>
+                            <div className='col-75'>
+                                <input type="date" id="date" name="date"/>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='col-25'>
+                                <label htmlFor="hour">Godzina</label>
+                            </div>
+                            <div className='col-75'>
+                                <input type="number" name="hour" id="hour"/>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className='col-25'>
+                                <label htmlFor="uwagi">Uwagi<br/>dla kuriera</label>
+                            </div>
+                            <div className='col-75'>
+                                <textarea name="uwagi" id="uwagi" cols="20" rows="5"/>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div className="column">
-                    <h5>Termin odbioru:</h5>
-                    <label htmlFor="date">Data</label>
-                    <input type="date" id="date" name="date"/>
-                    <br/>
-                    <label htmlFor="hour">Godzina</label>
-                    <input type="number" name="hour" id="hour"/>
-                    <br/>
-                    <label htmlFor="uwagi">Uwagi<br/>dla kuriera</label>
-                    <textarea name="uwagi" id="uwagi" cols="20" rows="5"/>
-                </div>
+
                 <br/>
                 <button onClick={this.previous}>Wstecz</button>
                 <button>Dalej</button>

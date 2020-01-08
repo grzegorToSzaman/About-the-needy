@@ -267,10 +267,34 @@ header.form--header {
         }
       }
       .step-four {
-        .column {
-          display: inline-block;
-          height: 300px;
-          width: 290px;
+        .columns {
+          display: flex;
+          box-sizing: border-box;
+          .column {
+            min-width: 390px;
+            label {
+              display: inline-block;
+            }
+            input, textarea {
+              width: 100%;
+            }
+            .col-25 {
+              float: left;
+              width: 25%;
+            }
+            .col-75 {
+              float: left;
+              width: 70%;
+            }
+            .row {
+              margin-top: 6px;
+            }
+            .row:after{
+              content: "";
+              display: table;
+              clear: both;
+            }
+          }
         }
       }
     }
