@@ -239,10 +239,23 @@ header.form--header {
         font-weight: lighter;
         margin: 0;
       }
+      button {
+        font-weight: lighter;
+        background-color: transparent;
+        border: 0.75px solid $font-color;
+        width: 120px;
+        height: 45px;
+        cursor: pointer;
+        margin-left: 15px;
+        margin-top: 50px;
+      }
+      h3 {
+         margin-top: 40px;
+         font-weight: bold;
+       }
+
       .step-one {
-        h3 {
-          margin-top: 40px;
-        }
+
         label {
           font-weight: lighter;
         }
@@ -251,12 +264,24 @@ header.form--header {
         }
       }
       .step-two {
-
+        //@import "settings/reset";
+        select {
+          margin-bottom: 150px;
+          background-color: transparent;
+        }
+        span {
+          font-weight: lighter;
+          margin-right: 15px;
+        }
       }
       .step-three {
         span {
           padding: 5px 10px;
           border: 1px solid darksalmon;
+        }
+        select {
+          margin-bottom: 30px;
+          background-color: transparent;
         }
         input[type=checkbox] {
           visibility: hidden;
@@ -303,6 +328,11 @@ header.form--header {
           margin: 0;
           padding: 0;
         }
+        h4 {
+          margin: 0;
+          padding-top: 30px;
+          padding-bottom: 20px;
+        }
         .things,
         .localization {
           display: flex;
@@ -346,6 +376,19 @@ header.form--header {
               clear: both;
             }
           }
+        }
+      }
+      .step-six {
+        width: 100%;
+        .window {
+          width: 67%;
+          margin-left: 1vw;
+          padding-top: 10vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
         }
       }
     }

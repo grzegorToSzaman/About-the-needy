@@ -4,10 +4,11 @@ import Step2 from "./StepTwo";
 import Step3 from "./StepThree";
 import Step4 from "./StepFour";
 import Summary from "./Summary";
+import ThankYou from "./ThankYou";
 
 class MainForm extends Component {
     state = {
-        step: 5,
+        step: 1,
         goodWear: false,
         badWear: false,
         toys: false,
@@ -23,7 +24,13 @@ class MainForm extends Component {
         mobile: '',
         date: '',
         hour: '',
-        comments: ''
+        comments: '',
+        textToOrangeBelt: [
+            'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.',
+            "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.",
+            "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.",
+            "Podaj adres oraz termin odbioru rzeczy."
+        ]
     };
     changeStep = step => {
         this.setState({step: step});
@@ -44,13 +51,28 @@ class MainForm extends Component {
     changeWhat = value => {
         this.setState({what: value})
     };
+    reset = () => {
+        this.setState({
+            step: 6,
+            goodWear: false,
+            badWear: false,
+            toys: false,
+            books: false,
+            others: false,
+            what: [],
+            numberOfBags: 0,
+            localization: '',
+            whoHelp: [],
+            street: '',
+            city: '',
+            zipCode: '',
+            mobile: '',
+            date: '',
+            hour: '',
+            comments: ''
+        })
+    };
     render() {
-        const textToOrangeBelt = [
-            'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.',
-            "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.",
-            "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.",
-            "Podaj adres oraz termin odbioru rzeczy."
-        ];
         let toDisplay;
         switch (this.state.step) {
             case 1:
@@ -88,7 +110,11 @@ class MainForm extends Component {
                 toDisplay = <Summary
                     mainState={this.state}
                     changeStep={this.changeStep}
+                    reset={this.reset}
                 />;
+                break;
+            case 6:
+                toDisplay = <ThankYou />;
                 break;
             default:
                 toDisplay = <Step1
@@ -100,7 +126,7 @@ class MainForm extends Component {
         const orangeBelt =
             <div className='orange-belt'>
                 <h3>Ważne!</h3>
-                <p>{textToOrangeBelt[this.state.step - 1]}</p>
+                <p>{this.state.textToOrangeBelt[this.state.step - 1]}</p>
             </div>;
 
         return (

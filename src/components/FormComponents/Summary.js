@@ -4,6 +4,9 @@ class Summary extends Component {
     previous = () => {
         this.props.changeStep(4);
     };
+    handleResetClick = () => {
+        this.props.reset();
+    };
     render() {
         const {
             numberOfBags,
@@ -20,15 +23,15 @@ class Summary extends Component {
         } = this.props.mainState;
         return (
             <div className='step-five'>
-                <h3>Podsumowanie Twojej darowizny:</h3>
-                <p>Oddajesz:</p>
+                <h4>Podsumowanie Twojej darowizny:</h4>
+                <h5>Oddajesz:</h5>
                 <div className="things">
                     <img src="./assets/Icon-1.svg" alt="icon"/>
-                    <p>{numberOfBags} worki, {what.join(", ")}, {whoHelp.join(", ")}</p>
+                    <h5>{numberOfBags} worki, {what.join(", ")}, {whoHelp.join(", ")}</h5>
                 </div>
                 <div className="localization">
                     <img src="./assets/Icon-4.svg" alt="icon"/>
-                    <p>dla lokalizacji: {localization}</p>
+                    <h5>dla lokalizacji: {localization}</h5>
                 </div>
                 <div className='columns'>
                     <div className="column">
@@ -95,7 +98,7 @@ class Summary extends Component {
                     </div>
                 </div>
                 <button onClick={this.previous}>Wstecz</button>
-                <button>Potwierdzam</button>
+                <button onClick={this.handleResetClick}>Potwierdzam</button>
             </div>
         )
     }
