@@ -14,6 +14,7 @@ class Step1 extends Component {
 
                 <h3>Zaznacz co chcesz oddać:</h3>
                 <input
+                    id='goodWear'
                     type="checkbox"
                     name='goodWear'
                     onChange={this.changeState}
@@ -22,6 +23,7 @@ class Step1 extends Component {
                 <label htmlFor="goodWear">ubrania, które nadają się do ponownego użycia</label>
                 <br/>
                 <input
+                    id='badWear'
                     type="checkbox"
                     name='badWear'
                     onChange={this.changeState}
@@ -30,6 +32,7 @@ class Step1 extends Component {
                 <label htmlFor="badWear">ubrania, do wyrzucenia</label>
                 <br/>
                 <input
+                    id='toys'
                     type="checkbox"
                     name='toys'
                     onChange={this.changeState}
@@ -38,6 +41,7 @@ class Step1 extends Component {
                 <label htmlFor="toys">zabawki</label>
                 <br/>
                 <input
+                    id='books'
                     type="checkbox"
                     name='books'
                     onChange={this.changeState}
@@ -46,6 +50,7 @@ class Step1 extends Component {
                 <label htmlFor="books">książki</label>
                 <br/>
                 <input
+                    id='others'
                     type="checkbox"
                     name='others'
                     onChange={this.changeState}

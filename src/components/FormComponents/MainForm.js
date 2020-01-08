@@ -15,6 +15,13 @@ class MainForm extends Component {
         numberOfBags: 0,
         localization: '',
         whoHelp: [],
+        street: '',
+        city: '',
+        zipCode: '',
+        mobile: '',
+        date: '',
+        hour: '',
+        comments: ''
     };
     changeStep = step => {
         this.setState({step: step});
@@ -67,6 +74,8 @@ class MainForm extends Component {
             case 4:
                 toDisplay = <Step4
                     changeStep={this.changeStep}
+                    method={this.changeState}
+                    mainState={this.state}
                 />;
                 break;
             default:

@@ -269,6 +269,7 @@ header.form--header {
       .step-four {
         .columns {
           display: flex;
+          flex-wrap: wrap;
           box-sizing: border-box;
           .column {
             min-width: 390px;
