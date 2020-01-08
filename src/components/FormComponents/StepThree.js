@@ -45,13 +45,14 @@ class Step3 extends Component {
                 </select>
                 <br/>
                 <h5>Komu chcesz pomóc?</h5>
-                <form onChange={this.handleChange}>
+                <form>
                     <label>
                         <input
                             type="checkbox"
                             name='whoHelp'
                             value='dzieciom'
                             checked={[...this.state.whoHelp].indexOf('dzieciom') !== -1}
+                            onChange={this.handleChange}
                         />
                         <span>dzieciom</span>
                     </label>
@@ -60,7 +61,8 @@ class Step3 extends Component {
                             type="checkbox"
                             name='whoHelp'
                             value='samotnym matkom'
-                            checked={[...this.state.whoHelp].indexOf('samotnym matkom') !== -1}
+                            checked={this.state.whoHelp.indexOf('samotnym matkom') !== -1}
+                            onChange={this.handleChange}
                         />
                         <span>samotnym matkom</span>
                     </label>
@@ -69,7 +71,8 @@ class Step3 extends Component {
                             type="checkbox"
                             name='whoHelp'
                             value='bezdomnym'
-                            checked={[...this.state.whoHelp].indexOf('bezdomnym') !== -1}
+                            checked={this.state.whoHelp.indexOf('bezdomnym') !== -1}
+                            onChange={this.handleChange}
                         />
                         <span>bezdomnym</span>
                     </label>
@@ -80,6 +83,7 @@ class Step3 extends Component {
                             name='whoHelp'
                             value='niepełnosprawnym'
                             checked={this.state.whoHelp.indexOf('niepełnosprawnym') !== -1}
+                            onChange={this.handleChange}
                         />
                         <span>niepełnosprawnym</span>
                     </label>
@@ -89,6 +93,7 @@ class Step3 extends Component {
                             name='whoHelp'
                             value='osobom starszym'
                             checked={this.state.whoHelp.indexOf('osobom starszym') !== -1}
+                            onChange={this.handleChange}
                         />
                         <span>osobom starszym</span>
                     </label>

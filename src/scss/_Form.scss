@@ -298,6 +298,56 @@ header.form--header {
           }
         }
       }
+      .step-five {
+        p {
+          margin: 0;
+          padding: 0;
+        }
+        .things,
+        .localization {
+          display: flex;
+          justify-content: right;
+          align-items: center;
+
+        }
+        .columns {
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+
+          .column {
+            min-width: 390px;
+
+            label {
+              display: inline-block;
+            }
+
+            input, textarea {
+              width: 100%;
+            }
+
+            .col-25 {
+              float: left;
+              width: 25%;
+            }
+
+            .col-75 {
+              float: left;
+              width: 70%;
+            }
+
+            .row {
+              margin-top: 6px;
+            }
+
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+          }
+        }
+      }
     }
   }
 }

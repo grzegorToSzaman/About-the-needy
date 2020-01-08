@@ -3,15 +3,17 @@ import Step1 from "./StepOne";
 import Step2 from "./StepTwo";
 import Step3 from "./StepThree";
 import Step4 from "./StepFour";
+import Summary from "./Summary";
 
 class MainForm extends Component {
     state = {
-        step: 4,
+        step: 5,
         goodWear: false,
         badWear: false,
         toys: false,
         books: false,
         others: false,
+        what: [],
         numberOfBags: 0,
         localization: '',
         whoHelp: [],
@@ -39,6 +41,9 @@ class MainForm extends Component {
     changeWhoHelp = val => {
         this.setState({whoHelp: val})
     };
+    changeWhat = value => {
+        this.setState({what: value})
+    };
     render() {
         const textToOrangeBelt = [
             'Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.',
@@ -53,6 +58,7 @@ class MainForm extends Component {
                     method={this.changeState}
                     checked={this.state}
                     changeStep={this.changeStep}
+                    changeWhat={this.changeWhat}
                 />;
                 break;
             case 2:
@@ -78,20 +84,31 @@ class MainForm extends Component {
                     mainState={this.state}
                 />;
                 break;
+            case 5:
+                toDisplay = <Summary
+                    mainState={this.state}
+                    changeStep={this.changeStep}
+                />;
+                break;
             default:
-                console.log('asdsa');
+                toDisplay = <Step1
+                    method={this.changeState}
+                    checked={this.state}
+                    changeStep={this.changeStep}
+                />;
         }
-
+        const orangeBelt =
+            <div className='orange-belt'>
+                <h3>Ważne!</h3>
+                <p>{textToOrangeBelt[this.state.step - 1]}</p>
+            </div>;
 
         return (
             <div className='main-form'>
                 <div className='container'>
-                    <div className='orange-belt'>
-                        <h3>Ważne!</h3>
-                        <p>{textToOrangeBelt[this.state.step - 1]}</p>
-                    </div>
+                    {this.state.step < 5 ? orangeBelt : null}
                     <div className='steps'>
-                        <p>Krok {this.state.step}/4</p>
+                        {this.state.step < 5 ? <p>Krok {this.state.step}/4</p> : null}
                         {toDisplay}
                     </div>
                 </div>
